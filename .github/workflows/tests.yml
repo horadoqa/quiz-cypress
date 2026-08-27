@@ -39,6 +39,9 @@ jobs:
         run: |
           mkdir -p pages
           cp index.html pages/index.html
+          cp game/assets/styles.css pages/
+          cp game/assets/script.js pages/
+          cp game/assets/logo.png pages/
 
       - name: Enviar site para o GitHub Pages
         uses: actions/upload-pages-artifact@v3
