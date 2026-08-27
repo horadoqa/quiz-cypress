@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Quiz de Cypress</title>
+  <link rel="stylesheet" href="./game/assets/styles.css">
+
+</head>
+
+<body>
+
+  <div class="pagina">
+
+    <div class="logo">
+      <div class="logo-icon">
+        <img src="./game/assets/logo.png" alt="Logo Hora do QA">
+      </div>
+
+      <div class="logo-text">
+        Hora do QA
+      </div>
+    </div>
+
+    <div id="quiz-container">
+      <div id="tela-quiz">
+        <h1>Quiz de Cypess</h1>
+        <div id="contador"></div>
+        <div id="pergunta"></div>
+        <div id="opcoes"></div>
+        <div id="feedback"></div>
+        <button id="proxima-btn">Próxima pergunta →</button>
+      </div>
+
+      <div id="tela-resultado">
+        <h2>Quiz finalizado!</h2>
+        <div id="pontuacao-final"></div>
+        <div id="mensagem-final"></div>
+        <button id="reiniciar-btn">Jogar novamente</button>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="./game/assets/script.js"></script>
+
+  <footer>
+
+    <p>Feito com ❤️ por <strong>Hora do QA</strong></p>
+
+    <p>Aprendendo Cypress</p>
+
+  </footer>
+
+</body>
+
+</html>

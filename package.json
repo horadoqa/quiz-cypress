@@ -1,7 +1,7 @@
 {
-  "name": "qa-portfolio-quiz-cypress",
+  "name": "quiz-cypress",
   "version": "1.0.0",
-  "description": "Portfólio de QA — jogo de quiz testado com Cypress",
+  "description": "Quiz Cypress",
   "scripts": {
     "start": "http-server game -p 8080 -s",
     "cy:open": "cypress open",

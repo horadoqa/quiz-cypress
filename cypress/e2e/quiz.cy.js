@@ -2,7 +2,7 @@
 
 // Casos de teste do Quiz de Cypress.
 // O Cypress acessa o jogo através de um servidor local (npm run start),
-// que serve o arquivo game/index.html em http://localhost:8080.
+// que serve o arquivo index.html em http://localhost:8080.
 
 describe('Quiz de Cypress', () => {
 
