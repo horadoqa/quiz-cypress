@@ -1,0 +1,331 @@
+:root {
+  --bg: #1e293b;
+  --card: #334155;
+  --button: #475569;
+  --button-hover: #64748b;
+  --primary: #2563eb;
+  --text: #f1f5f9;
+  --muted: #94a3b8;
+  --success: #16a34a;
+  --success-light: #4ade80;
+  --error: #dc2626;
+  --error-light: #f87171;
+  --border: rgba(255, 255, 255, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  margin: 0;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+}
+
+/* Conteúdo principal */
+.pagina {
+  flex: 1;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 28px;
+
+  padding: 40px 20px;
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 16px;
+
+  font-weight: bold;
+  margin: 0 0 8px;
+}
+
+.logo-icon {
+  width: 80px;
+  height: 80px;
+
+  border-radius: 50%;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #fff;
+  flex-shrink: 0;
+}
+
+.logo-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.logo-text {
+  font-size: 42px;
+  line-height: 1;
+}
+
+.logo-text span {
+  color: #60a5fa;
+}
+
+/* Quiz */
+#quiz-container {
+  width: min(420px, 100%);
+
+  background: var(--card);
+
+  padding: 32px;
+  border-radius: 16px;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+
+  display: flex;
+  flex-direction: column;
+}
+
+/* Título */
+h1 {
+  font-size: 20px;
+  line-height: 1.3;
+
+  text-align: center;
+
+  margin: 0 0 18px;
+
+  color: var(--success-light);
+}
+
+/* Contador */
+#contador {
+  text-align: center;
+
+  color: var(--muted);
+
+  margin: 0 0 24px;
+
+  font-size: 14px;
+}
+
+/* Pergunta */
+#pergunta {
+  font-size: 18px;
+  line-height: 1.5;
+
+  margin: 0 0 24px;
+
+  min-height: 50px;
+}
+
+/* Área das respostas */
+.resposta-btn {
+  display: block;
+
+  width: 100%;
+
+  padding: 14px 16px;
+
+  margin: 0 0 12px;
+
+  background: var(--button);
+  color: var(--text);
+
+  border: 1px solid transparent;
+  border-radius: 8px;
+
+  font-size: 15px;
+  line-height: 1.4;
+
+  cursor: pointer;
+  text-align: left;
+
+  transition:
+    background 0.2s ease,
+    transform 0.15s ease,
+    border-color 0.2s ease;
+}
+
+.resposta-btn:last-child {
+  margin-bottom: 0;
+}
+
+.resposta-btn:hover:not(:disabled) {
+  background: var(--button-hover);
+  transform: translateY(-1px);
+}
+
+.resposta-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.resposta-btn.correta {
+  background: var(--success);
+}
+
+.resposta-btn.errada {
+  background: var(--error);
+}
+
+.resposta-btn:disabled {
+  cursor: default;
+  opacity: 0.9;
+}
+
+/* Feedback */
+#feedback {
+  min-height: 24px;
+
+  margin: 20px 0 16px;
+
+  font-weight: bold;
+  line-height: 1.4;
+
+  text-align: center;
+}
+
+#feedback.acerto {
+  color: var(--success-light);
+}
+
+#feedback.erro {
+  color: var(--error-light);
+}
+
+/* Botões */
+#proxima-btn,
+#reiniciar-btn {
+  width: 100%;
+
+  padding: 14px;
+
+  margin-top: 4px;
+
+  background: var(--primary);
+  color: white;
+
+  border: none;
+  border-radius: 8px;
+
+  font-size: 15px;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.15s ease;
+}
+
+#proxima-btn:hover,
+#reiniciar-btn:hover {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+/* Resultado */
+#tela-resultado {
+  display: none;
+  text-align: center;
+}
+
+#tela-resultado h2 {
+  font-size: 22px;
+  margin: 0 0 16px;
+}
+
+#pontuacao-final {
+  font-size: 40px;
+  font-weight: bold;
+
+  margin: 0 0 12px;
+}
+
+#mensagem-final {
+  color: var(--muted);
+
+  margin: 0 0 24px;
+
+  line-height: 1.5;
+}
+
+/* Rodapé */
+footer {
+  width: 100%;
+
+  text-align: center;
+
+  color: var(--muted);
+
+  font-size: 14px;
+  line-height: 1.5;
+
+  padding: 20px;
+
+  border-top: 1px solid var(--border);
+
+  background: var(--card);
+}
+
+/* Celular */
+@media (max-width: 500px) {
+  .pagina {
+    gap: 22px;
+    padding: 30px 15px;
+  }
+
+  .logo {
+    gap: 12px;
+  }
+
+  .logo-icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .logo-text {
+    font-size: 32px;
+  }
+
+  #quiz-container {
+    padding: 26px 20px;
+  }
+
+  h1 {
+    margin-bottom: 16px;
+  }
+
+  #contador {
+    margin-bottom: 22px;
+  }
+
+  #pergunta {
+    font-size: 17px;
+    margin-bottom: 22px;
+  }
+
+  .resposta-btn {
+    padding: 14px;
+    margin-bottom: 10px;
+  }
+
+  #feedback {
+    margin: 18px 0 14px;
+  }
+}

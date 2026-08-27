@@ -1,0 +1,16 @@
+{
+  "name": "qa-portfolio-quiz-cypress",
+  "version": "1.0.0",
+  "description": "Portfólio de QA — jogo de quiz testado com Cypress",
+  "scripts": {
+    "start": "http-server game -p 8080 -s",
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
+    "test": "start-server-and-test start http://localhost:8080 cy:run"
+  },
+  "devDependencies": {
+    "cypress": "^13.14.2",
+    "http-server": "^14.1.1",
+    "start-server-and-test": "^2.0.3"
+  }
+}

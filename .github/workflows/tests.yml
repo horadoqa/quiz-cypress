@@ -1,0 +1,31 @@
+name: Testes Automatizados
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  testes:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Baixar o código do repositório
+        uses: actions/checkout@v4
+
+      - name: Rodar os testes com Cypress
+        uses: cypress-io/github-action@v6
+        with:
+          start: npm run start
+          wait-on: "http://localhost:8080"
+          browser: chrome
+
+      - name: Publicar screenshots de falhas (se houver)
+        uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: screenshots-de-falha
+          path: cypress/screenshots
+          retention-days: 15
