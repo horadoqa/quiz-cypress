@@ -15,6 +15,38 @@ Um quiz simples com 20 perguntas de múltipla escolha. A cada resposta, o jogo m
 - *Cypress* — framework de testes end-to-end
 - *GitHub Actions* — roda os testes automaticamente a cada push
 
+
+## Fluxo
+
+```mermaid
+flowchart TD
+    A["GitHub Event<br/>push / pull_request / manual"] --> B["Job: testes"]
+
+    B --> C["Checkout"]
+    C --> D["npm ci"]
+    D --> E["Iniciar servidor<br/>http://localhost:8080"]
+    E --> F["Executar Cypress"]
+
+    F -->|Falha| G["Upload screenshots"]
+    F -->|Sucesso| H["Preparar site"]
+
+    H --> I["pages/index.html"]
+    I --> J["pages/styles.css"]
+    J --> K["pages/script.js"]
+    K --> L["pages/logo.png"]
+
+    L --> M["Upload Pages Artifact"]
+
+    M --> N["Job: publicar"]
+    N --> O{"Pull Request?"}
+
+    O -->|Sim| P["Deploy não executado"]
+    O -->|Não| Q["GitHub Pages"]
+    Q --> R["Site público"]
+
+    B -.->|"needs: testes"| N
+```
+
 ## Estrutura do projeto
 
 ```bash
