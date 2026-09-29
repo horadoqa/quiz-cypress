@@ -2,6 +2,12 @@
 
 Desafia-se neste quiz que avalia seus conhecimentos em CYPRESS.
 
+<div align="center">
+<img src="./quiz-cypress.png">
+</div>
+
+## Status Github Actions
+
 ![Testes](https://github.com/horadoqa/quiz-cypress/actions/workflows/tests.yml/badge.svg)
 
 ## O jogo
@@ -50,17 +56,17 @@ flowchart TD
 ## Estrutura do projeto
 
 ```bash
-quiz-cypress/
-├── game/ # Página HTML do QUIZ
-│   ├── assets
+📁 quiz-cypress/
+├── 📁 game/ # Página HTML do QUIZ
+│   ├── 📁 assets
 │   │   ├── logo.png
 │   │   ├── script.js
 │   │   └── styles.css
 │   └── index.html
-├── cypress/e2e/quiz.cy.js  # Casos de teste
+├── 📁 cypress/e2e/quiz.cy.js  # Casos de teste
 ├── cypress.config.js
 ├── package.json
-├── .github/workflows/tests.yml # CI/CD
+├── 📁 .github/workflows/tests.yml # CI/CD
 └── README.md # Documentação
 ```
 
