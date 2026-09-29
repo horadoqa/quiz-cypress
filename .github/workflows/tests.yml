@@ -1,4 +1,4 @@
-name: Testes Automatizados
+name: Quiz Cypress
 
 on:
   push:
